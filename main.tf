@@ -19,7 +19,7 @@ resource "google_compute_instance" "default" {
     }
   }
 
-  metadata_startup_script = "sudo apt-get update && sudo apt-get install apache2 -y && $ sudo apt install git-all && $ sudo apt-get install python-pip3 && $ sudo apt-get install python3-flask && git clone https://github.com/thelooneytoons/api.git && $ export FLASK_APP=api.py && $ flask run"
+  metadata_startup_script = "sudo apt-get update && sudo apt-get install apache2 -y && echo '<!doctype html><html><body><h1>heyyy welcome to the looneytoons response<h2></h1></body></html> | /var/www/html/index.html"
 
   network_interface {
     network = "default"
