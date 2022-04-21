@@ -1,17 +1,20 @@
-name: 'Terraform CI'
+steps:
+  # Install dependencies
+  #- name: python
+   # entrypoint: pip
+    #args: ["install", "-r", "requirements.txt", "--user"]
 
-on:
-  push:
-    branches:
-      -main
-
-jobs:
-  terraform:
-    name: 'Terraform'
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Terraform Apply
-      if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-      run: terraform apply -auto-approve
-      
+  ~#-name: run-code
+   #entrypoint:cd
+   #args:["flask"]
+  
+  #-name: run-flask-app
+   #entrypoint: python
+   #args: ["app.py"]
+   
+   
+  - id: 'tf apply'
+  name: 'hashicorp/terraform:1.0.0'
+  entrypoint: 'sh'
+  args:    
+        terraform apply -auto-approve
