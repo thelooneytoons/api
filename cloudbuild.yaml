@@ -1,18 +1,4 @@
-steps:
-  # Install dependencies
-  #- name: python
-   # entrypoint: pip
-    #args: ["install", "-r", "requirements.txt", "--user"]
-
-  #-name: run-code
-   #entrypoint:cd
-   #args:["flask"]
-  
-  #-name: run-flask-app
-   #entrypoint: python
-   #args: ["app.py"]
-   
-   
+steps:  
   -id: 'push'
   -name: 'terra-push'
   entrypoint: 'sh'
