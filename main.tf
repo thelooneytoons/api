@@ -6,7 +6,7 @@ provider "google" {
     zone = "us-central1-c"
 }
 
-resource "google_compute_global_address" "static" {
+resource "google_compute_global_address" "default" {
   project      =  "training-freshers" # Replace this with your service project ID in quotes
   name         = "ipv6-address"
   address_type = "EXTERNAL"
@@ -30,7 +30,7 @@ resource "google_compute_instance" "default" {
     network = "default"
 
     access_config {
-      nat_ip = google_compute_global_address.static.address
+      nat_ip = google_compute_global_address.default.address
     }
   }
 
