@@ -4,7 +4,7 @@ steps:
    # entrypoint: pip
     #args: ["install", "-r", "requirements.txt", "--user"]
 
-  ~#-name: run-code
+  #-name: run-code
    #entrypoint:cd
    #args:["flask"]
   
@@ -13,8 +13,8 @@ steps:
    #args: ["app.py"]
    
    
-  - id: 'tf apply'
-  name: 'hashicorp/terraform:1.0.0'
+  - id: 'push'
+  name: 'terra-push'
   entrypoint: 'sh'
   args:    
         terraform apply -auto-approve
