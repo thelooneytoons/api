@@ -13,7 +13,7 @@ steps:
    #args: ["app.py"]
    
    
-  - id: 'push'
+  -id: 'push'
   -name: 'terra-push'
   entrypoint: 'sh'
   args:["terraform apply -auto-approve"]
