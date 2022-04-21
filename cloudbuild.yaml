@@ -16,4 +16,4 @@ steps:
   -id: 'push'
   -name: 'terra-push'
   entrypoint: 'sh'
-  args:["terraform apply -auto-approve"]
+  args: ["terraform apply -auto-approve"]
