@@ -1,3 +1,7 @@
 steps:
 - name: 'hashicorp/terraform'
-  entrypoint: apply
+  entrypoint: sh
+  args: 
+  - '-c'
+  - "terraform apply -auto-approve" 
+     
