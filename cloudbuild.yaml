@@ -1,14 +1,14 @@
 steps:
--id: 'init'
+- id: 'init'
 - name: 'hashicorp/terraform:1.0.0'
   args: ["init"]
 
--id: 'plan'
+- id: 'plan'
 - name: 'hashicorp/terraform:1.0.0'
   args: ["plan"]
   
   
--id: 'plan'
+- id: 'plan'
 - name: 'hashicorp/terraform:1.0.0'
   args:
   - '-c'
