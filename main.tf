@@ -3,7 +3,7 @@
 provider "google" {
     version = "3.5.0"
     #credentials = file("/downloads/compute-instance.json")
-    project = "training-freshers"
+    project = "thelooneytoons-tasks"
     region = "us-central1"
     zone = "us-central1-c"
 }
@@ -12,7 +12,7 @@ provider "google" {
 
 
  resource "google_compute_address" "static-dvs" {
-   project      =  "training-freshers" # Replace this with your service project ID in quotes
+   project      =  "thelooneytoons-tasks" # Replace this with your service project ID in quotes
    name         = "ipv4-address"
    address_type = "EXTERNAL"
  }
@@ -39,17 +39,13 @@ resource "google_compute_instance" "default" {
   }
 
   // Apply the firewall rule to allow external IPs to access this instance
-  tags = ["http-server"]
+  tags = ["default-allow-http","http-server"]
 }
 
 
-output "ip" {
-   value = google_compute_instance.default.network_interface.0.access_config.0.nat_ip
-}
-
-
-
-
+# output "ip" {
+#   value = google_compute_instance.default.network_interface.0.access_config.0.nat_ip
+# }
 
 
 
