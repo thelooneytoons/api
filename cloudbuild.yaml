@@ -1,4 +1,4 @@
 steps:
-- name: 'ubuntu'
-  entrypoint: 'sudo'
+- name: hashicorp/terraform:1.0.0'
+  entrypoint: 'sh'
   args: ["terraform apply -auto-approve"]
