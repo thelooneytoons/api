@@ -1,4 +1,3 @@
 steps:
 - name: 'ubuntu'
-  entrypoint: 'sh'
   args: ["echo", "hello WORLD"]
