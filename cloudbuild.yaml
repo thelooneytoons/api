@@ -6,7 +6,4 @@ steps:
   args: ["plan"]
   
 - name: 'hashicorp/terraform:1.0.0'
-  args:
-  - '-c'
-  - |
-      terraform apply -auto-approve 
+  args: ["apply -auto-approve"] 
