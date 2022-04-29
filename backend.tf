@@ -1,6 +1,6 @@
 terraform {
   backend "gcs" {
-    bucket  = "tf-state-prod"
+    bucket  = "the-looneytoons-tasks-bucket"
     prefix  = "terraform/state"
   }
 }
