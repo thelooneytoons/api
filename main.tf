@@ -17,6 +17,21 @@ provider "google" {
    address_type = "EXTERNAL"
  }
 
+resource "google_compute_firewall" "default-http-rule" {
+  name    = "allow-http-rule"
+  network = google_compute_network.default.name
+
+  allow {
+    protocol = "tcp"
+    ports    = ["80", "8080"]
+  }
+
+  traget_tags = ["allow-http"]
+}
+
+
+
+
 resource "google_compute_instance" "default" {
   name         = "thelooneytoons2"
   machine_type = "f1-micro"
@@ -39,7 +54,7 @@ resource "google_compute_instance" "default" {
   }
 
   // Apply the firewall rule to allow external IPs to access this instance
-  tags = ["default-allow-http","http-server"]
+  tags = ["allow-http"]
 }
 
 
