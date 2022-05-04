@@ -9,7 +9,7 @@ provider "google" {
 resource "google_compute_address" "static-dvs" {
   name         = "ipv4-address"
   address_type = "EXTERNAL"
- }
+}
 
 
 resource "google_compute_instance" "default" {
