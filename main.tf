@@ -76,7 +76,7 @@ data "google_iam_policy" "admin" {
 }
 
 resource "google_storage_bucket_iam_policy" "policy" {
-  bucket = google_storage_bucket.default.name
+  bucket = google_storage_bucket.new-storage-policy
   policy_data = data.google_iam_policy.admin.policy_data
 }
 
