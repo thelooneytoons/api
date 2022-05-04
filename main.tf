@@ -73,7 +73,6 @@ data "google_iam_policy" "admin" {
     #[projects|organizations]/{parent-name}/roles/{role-name}
     members = [
       "user:sotrage-bucket@thelooneytoons-tasks.iam.gserviceaccount.com",
-      "user:659974435034@cloudbuild.gserviceaccount.com",
     ]
   }
 }
