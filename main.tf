@@ -65,7 +65,7 @@ resource "google_compute_instance" "default" {
 
 
 
-ata "google_iam_policy" "admin" {
+data "google_iam_policy" "admin" {
   binding {
     role = "roles/storage.objectAdmin"
     #[projects|organizations]/{parent-name}/roles/{role-name}
