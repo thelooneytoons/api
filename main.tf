@@ -1,8 +1,8 @@
 provider "google" {
-    version = "3.5.0"
-    project = "thelooneytoons-tasks"
-    region = "us-central1"
-    zone = "us-central1-c"
+  version = "3.5.0"
+  project = "thelooneytoons-tasks"
+  region  = "us-central1"
+  zone    = "us-central1-c"
 }
 
 
@@ -29,7 +29,7 @@ resource "google_compute_instance" "default" {
     network = "default"
 
     access_config {
-       nat_ip = google_compute_address.static-dvs.address
+      nat_ip = google_compute_address.static-dvs.address
     }
   }
 
