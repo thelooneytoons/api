@@ -67,8 +67,7 @@ data "google_iam_policy" "admin" {
     role = "roles/storage.objectAdmin"
     #[projects|organizations]/{parent-name}/roles/{role-name}
     members = [
-      "user:sotrage-bucket@thelooneytoons-tasks.iam.gserviceaccount.com",
-      "user:sotrage-bucket@thelooneytoons-tasks.iam.gserviceaccount.com",
+      "serviceAccount:storage-bucket@thelooneytoons-tasks.iam.gserviceaccount.com",
     ]
   }
 
@@ -76,8 +75,7 @@ data "google_iam_policy" "admin" {
     role = "roles/storage.objectCreator"
     #[projects|organizations]/{parent-name}/roles/{role-name}
     members = [
-      "user:sotrage-bucket@thelooneytoons-tasks.iam.gserviceaccount.com",
-      "user:sotrage-bucket@thelooneytoons-tasks.iam.gserviceaccount.com",
+      "serviceAccount:storage-bucket@thelooneytoons-tasks.iam.gserviceaccount.com",
     ]
   }
 
@@ -85,8 +83,7 @@ data "google_iam_policy" "admin" {
     role = "roles/storage.admin"
     #[projects|organizations]/{parent-name}/roles/{role-name}
     members = [
-      "user:sotrage-bucket@thelooneytoons-tasks.iam.gserviceaccount.com",
-      "user:sotrage-bucket@thelooneytoons-tasks.iam.gserviceaccount.com",
+      "serviceAccount:storage-bucket@thelooneytoons-tasks.iam.gserviceaccount.com",
     ]
   }
 
