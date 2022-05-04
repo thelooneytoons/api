@@ -1,23 +1,15 @@
-
-
 provider "google" {
     version = "3.5.0"
-  
     project = "thelooneytoons-tasks"
     region = "us-central1"
     zone = "us-central1-c"
 }
 
 
-
-
- resource "google_compute_address" "static-dvs" {
-   project      =  "thelooneytoons-tasks" # Replace this with your service project ID in quotes
-   name         = "ipv4-address"
-   address_type = "EXTERNAL"
+resource "google_compute_address" "static-dvs" {
+  name         = "ipv4-address"
+  address_type = "EXTERNAL"
  }
-
-
 
 
 resource "google_compute_instance" "default" {
@@ -40,11 +32,6 @@ resource "google_compute_instance" "default" {
        nat_ip = google_compute_address.static-dvs.address
     }
   }
-    tags= ["http-server"]
+
+  tags = ["allow-http"]
 }
-
-
-
-
-
-
