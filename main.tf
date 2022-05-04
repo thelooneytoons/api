@@ -63,16 +63,6 @@ resource "google_compute_instance" "default" {
 # }
 
 
-resource "google_logging_billing_account_sink" "my-sink" {
-  name            = "my-sink"
-  description = "some explanation on what this is"
-  billing_account = " 01FA97-4B7046-FA32C3"
-
-  # Can export to pubsub, cloud storage, or bigquery
-  destination = "storage.googleapis.com/google_storage_bucket.log-bucket.default.name}"
-}
-
-
 
 
 data "google_iam_policy" "admin" {
