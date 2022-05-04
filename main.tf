@@ -40,7 +40,7 @@ resource "google_compute_instance" "default" {
        nat_ip = google_compute_address.static-dvs.address
     }
   }
-    tags= ["http-server"]
+    tags= ["http-server", "https-server"]
 }
 
 
