@@ -51,45 +51,6 @@ resource "google_compute_instance" "default" {
 # }
 
 
-resource "google_storage_bucket" "bucket-2" {
-  name          = "thelooneytoons-bucket-2"
-  location      = "EU"
-  force_destroy = true
-
-}
 
 
 
-
-
-data "google_iam_policy" "admin" {
-  binding {
-    role = "roles/storage.objectAdmin"
-    #[projects|organizations]/{parent-name}/roles/{role-name}
-    members = [
-      "serviceAccount:storage-bucket@thelooneytoons-tasks.iam.gserviceaccount.com",
-    ]
-  }
-
-  binding {
-    role = "roles/storage.objectCreator"
-    #[projects|organizations]/{parent-name}/roles/{role-name}
-    members = [
-      "serviceAccount:storage-bucket@thelooneytoons-tasks.iam.gserviceaccount.com",
-    ]
-  }
-
-  binding {
-    role = "roles/storage.admin"
-    #[projects|organizations]/{parent-name}/roles/{role-name}
-    members = [
-      "serviceAccount:storage-bucket@thelooneytoons-tasks.iam.gserviceaccount.com",
-    ]
-  }
-
-}
-
-resource "google_storage_bucket_iam_policy" "policy" {
-  bucket = google_storage_bucket.bucket-2.self_link
-  policy_data = data.google_iam_policy.admin.policy_data
-}
