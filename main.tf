@@ -52,7 +52,7 @@ resource "google_compute_instance" "default" {
 
 
 resource "google_storage_bucket" "bucket-2" {
-  name          = "bucket-2"
+  name          = "thelooneytoons-bucket-2"
   location      = "EU"
   force_destroy = true
 
