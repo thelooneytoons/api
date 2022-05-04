@@ -65,20 +65,37 @@ resource "google_compute_instance" "default" {
 
 
 
-data "google_iam_policy" "admin" {
+ata "google_iam_policy" "admin" {
   binding {
-    role = "roles/storage.admin"
-    role = "roles/storage.objectCreator"
     role = "roles/storage.objectAdmin"
     #[projects|organizations]/{parent-name}/roles/{role-name}
     members = [
       "user:sotrage-bucket@thelooneytoons-tasks.iam.gserviceaccount.com",
+      "user:sotrage-bucket@thelooneytoons-tasks.iam.gserviceaccount.com",
     ]
   }
+
+  binding {
+    role = "roles/storage.objectCreator"
+    #[projects|organizations]/{parent-name}/roles/{role-name}
+    members = [
+      "user:sotrage-bucket@thelooneytoons-tasks.iam.gserviceaccount.com",
+      "user:sotrage-bucket@thelooneytoons-tasks.iam.gserviceaccount.com",
+    ]
+  }
+
+  binding {
+    role = "roles/storage.admin"
+    #[projects|organizations]/{parent-name}/roles/{role-name}
+    members = [
+      "user:sotrage-bucket@thelooneytoons-tasks.iam.gserviceaccount.com",
+      "user:sotrage-bucket@thelooneytoons-tasks.iam.gserviceaccount.com",
+    ]
+  }
+
 }
 
 resource "google_storage_bucket_iam_policy" "policy" {
   bucket = google_storage_bucket.default.name
   policy_data = data.google_iam_policy.admin.policy_data
 }
-
