@@ -90,6 +90,6 @@ data "google_iam_policy" "admin" {
 }
 
 resource "google_storage_bucket_iam_policy" "policy" {
-  bucket = "bucket-2"
+  bucket = google_storage_bucket.bucket-2.self_link
   policy_data = data.google_iam_policy.admin.policy_data
 }
