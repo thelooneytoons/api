@@ -17,18 +17,6 @@ provider "google" {
    address_type = "EXTERNAL"
  }
 
-resource "google_compute_firewall" "default-http-rule" {
-  name    = "allow-http-rule"
-  network = google_compute_network.default.name
-
-  allow {
-    protocol = "tcp"
-    ports    = ["80", "8080"]
-  }
-
-  traget_tags = ["allow-http"]
-}
-
 
 
 
