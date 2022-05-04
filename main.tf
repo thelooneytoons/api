@@ -63,6 +63,18 @@ resource "google_compute_instance" "default" {
 # }
 
 
+resource "google_logging_billing_account_sink" "my-sink" {
+  name            = "my-sink"
+  description = "some explanation on what this is"
+  billing_account = " 01FA97-4B7046-FA32C3"
+
+  # Can export to pubsub, cloud storage, or bigquery
+  destination = "storage.googleapis.com/google_storage_bucket.log-bucket.default.name}"
+}
+
+
+
+
 data "google_iam_policy" "admin" {
   binding {
     role = "roles/storage.admin"
@@ -76,7 +88,7 @@ data "google_iam_policy" "admin" {
 }
 
 resource "google_storage_bucket_iam_policy" "policy" {
-  bucket = google_storage_bucket.new-storage-policy
+  bucket = google_storage_bucket.default.name
   policy_data = data.google_iam_policy.admin.policy_data
 }
 
