@@ -2,7 +2,7 @@
 
 provider "google" {
     version = "3.5.0"
-    #credentials = file("/downloads/compute-instance.json")
+  
     project = "thelooneytoons-tasks"
     region = "us-central1"
     zone = "us-central1-c"
@@ -41,14 +41,8 @@ resource "google_compute_instance" "default" {
     }
   }
 
-  // Apply the firewall rule to allow external IPs to access this instance
-  tags = ["allow-http"]
 }
 
-
-# output "ip" {
-#   value = google_compute_instance.default.network_interface.0.access_config.0.nat_ip
-# }
 
 
 
