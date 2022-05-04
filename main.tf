@@ -52,7 +52,7 @@ resource "google_compute_instance" "default" {
 
 
 resource "google_storage_bucket" "bucket-2" {
-  name          = "image-store.com"
+  name          = "bucket-2"
   location      = "EU"
   force_destroy = true
 
